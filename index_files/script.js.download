@@ -1,0 +1,24 @@
+function ff(){
+  var input=document.querySelector('#sx').value;
+  var apiUrlKey= `http://api.openweathermap.org/data/2.5/forecast?q=${input}&appid=768d6bd4bf42c06b0464c112e838748f`
+  // Converts the response to JSON
+ async function getWeatherInfo() {
+   let response = await fetch(apiUrlKey);
+   let data= await response.json();
+   var img=document.querySelector('.container');
+  img.innerHTML= '';
+  
+  loadImg=document.createElement('img');
+  loadImg.setAttribute('src',data.list[0].weather);//hadsomething here);
+  img.appendChild(loadImg);
+   return data;
+ }
+getWeatherInfo().then(data=> 
+  console.log(data.list[0]));
+  
+  
+  
+ }
+
+
+
