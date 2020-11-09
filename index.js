@@ -1,18 +1,15 @@
-//bring in the express server and create application
-let express= require('express');
-let app= express();
+const http = require('http');
+const port=3000 ;
 
-// use the express router object
-let router= express.Router();
-
-//create get to return a list of all pies
-router.get('/', function(req,res,next){
-    res.send("Apple");
+const server=http.createServer(function(req,res){
+res.write('Hello WOrld');
+res.end();
 });
-// configure router so all routes are prefixed with /api/v1
-app.use('/api/',router);
+server.listen(port,function(error){
+    if(error){
+        console.log('something went wrong,error')
 
-// create server to listen on port 5000
-var server=app.listen(5000,function(){
-    console.log('Node server is running on http://localhost:5000..');
+    }else {
+        console.log('Server is listening on port'+port);
+    }
 });
