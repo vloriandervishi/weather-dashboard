@@ -1,0 +1,20 @@
+{
+  "name": "weather-dashboard",
+  "version": "1.0.0",
+  "description": "rest api for weather dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vloriandervishi/weather-dashboard.git"
+  },
+  "author": "Vlorian Dervishi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vloriandervishi/weather-dashboard/issues"
+  },
+  "homepage": "https://github.com/vloriandervishi/weather-dashboard#readme"
+}
