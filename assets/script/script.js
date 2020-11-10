@@ -170,13 +170,24 @@ $(document).ready(function () {
       var iconList5 = d.list[36].weather[0].icon;
       var weatherIcon5 = $('<img id="weatherIcon">');
       weatherIcon5.attr('src', `https://openweathermap.org/img/wn/${iconList5}@2x.png`);
-      $(".fname5").append(weatherIcon4);
+      $(".fname5").append(weatherIcon5);
       $(".ftemp5").append(`Temp :${Math.floor(d.list[36].main.temp - 273.15) * 1.80 + 32}℉ `);
       $(".fhumidity5").append('Humidity:' + d.list[36].main.humidity + '%');
 
 
 
+      localStorage.setItem('city1', JSON.stringify(input));
+      localStorage.setItem('tempCity1', JSON.stringify(Math.floor(d.list[0].main.temp - 273.15) * 1.80 + 32) + '℉ ');
+      localStorage.setItem('wind1', JSON.stringify(d.list[0].wind.speed + ' mph'));
+      localStorage.setItem('humidity1', JSON.stringify(d.list[0].main.humidity + '%'));
+      // localStorage.setItem('icon',weatherIcon);
 
+      var cityWeatherObj1 = {
+        city: localStorage.getItem('city1'),
+        temp: localStorage.getItem('tempCity1'),
+        wind: localStorage.getItem('wind1'),
+        uv: localStorage.getItem('uv-index1')
+      }
 
 
     });
@@ -215,12 +226,7 @@ $(document).ready(function () {
       $(".temp").empty();
       $(".uv-index").empty();
       $('.date').empty();
-      $(".fdate1").empty();
-      $(".fdate1").empty();
-      $(".fdate2").empty();
-      $(".fdate3").empty();
-      $(".fdate4").empty();
-      $(".fdate5").empty();
+      
     }
     clearField();
   });
